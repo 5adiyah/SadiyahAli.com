@@ -1,0 +1,22 @@
+/* MEDIA QUERIES */
+@mixin mq($query) {
+  @media (min-width: rem($query)) {
+    @content;
+  }
+}
+
+@mixin font-line-height($font-size: $base-font-size, $line-height: 20) {
+  $font-size-px: $font-size * 1px;
+  $base-font-size-px: $base-font-size * 1px;
+  font-size: ($font-size-px / $base-font-size-px) * 1rem;
+  line-height: ($line-height / $font-size);
+}
+
+
+@mixin hocus {
+  &:active,
+  &:hover,
+  &:focus {
+    @content;
+  }
+}

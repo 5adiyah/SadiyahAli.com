@@ -1,0 +1,32 @@
+body {
+  @include font-line-height(16, 30);
+  font-family: $lato;
+  color: $black;
+}
+
+h1, .h1,
+h2, .h2 {
+  font-family: $heebo;
+}
+
+h3, .h3,
+h4, .h4 {
+  font-family: $advent-pro;
+}
+
+
+h1, .h1 {
+  @include font-line-height(36, 53);
+
+  @include mq($md){
+    @include font-line-height(60, 88);
+  }
+}
+
+h2, .h2 {
+  @include font-line-height(30, 48);
+
+  @include mq($md){
+    @include font-line-height(36, 53);
+  }
+}
