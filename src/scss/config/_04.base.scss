@@ -30,3 +30,7 @@ h2, .h2 {
     @include font-line-height(36, 53);
   }
 }
+
+.bg-tan {
+  background-color: $light-off-white;
+}
