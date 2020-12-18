@@ -12,7 +12,7 @@ export default function Navigation() {
                 <div className="text-wrapper">
                     <p className="hero-subtitle">Software Engineer</p>
                     <h1>Sadiyah Ali</h1>
-                    <button class="btn bg-blue white"><Link to="/contact">Contact</Link></button>
+                    <button className="btn bg-blue white"><Link to="/contact">Contact</Link></button>
                 </div>
             </div>
         </header>
