@@ -12,8 +12,6 @@ import { useStaticQuery, graphql } from "gatsby";
 import Header from "./sections/header";
 import Footer from "./sections/footer";
 
-import Jobs from "./Jobs";
-
 import 'normalize.css';
 import '../scss/styles.scss';
 
