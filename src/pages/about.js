@@ -25,7 +25,12 @@ export default function About() {
                         {data.allStrapiAbout.nodes.map(document => (
                             <>
                                 <h2>{document.title} - document.title</h2>
-                                <ReactMarkdown source={document.content} />
+                                <ReactMarkdown
+                                    source={document.content}
+                                    transformImageUri={uri =>
+                                        uri.startsWith('http') ? uri : `${process.env.IMAGE_BASE_URL}${uri}`
+                                    }
+                                />
                             </>
                         ))}
                     </>
