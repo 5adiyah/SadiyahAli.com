@@ -17,19 +17,17 @@ const aboutQuery = graphql`
 export default function About() {
     return (
         <Layout>
-            <h1>This is my about page!</h1>
             <StaticQuery
                 query={aboutQuery}
                 render={data => (
-                    <div>
+                    <>
                         {data.allStrapiAbout.nodes.map(document => (
                             <>
-                                <p>Id: {document.id}</p>
                                 <h2>{document.title} - document.title</h2>
-                                <div>{document.content}</div>
+                                <p>{document.content}</p>
                             </>
                         ))}
-                    </div>
+                    </>
                 )}
             />
         </Layout>
