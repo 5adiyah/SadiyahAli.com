@@ -1,6 +1,7 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import Layout from "../components/layout";
+import ReactMarkdown from "react-markdown";
 
 const aboutQuery = graphql`  
   query AboutQuery {
@@ -24,7 +25,7 @@ export default function About() {
                         {data.allStrapiAbout.nodes.map(document => (
                             <>
                                 <h2>{document.title} - document.title</h2>
-                                <p>{document.content}</p>
+                                <ReactMarkdown source={document.content} />
                             </>
                         ))}
                     </>
