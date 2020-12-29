@@ -35,7 +35,10 @@ const IndexPage = () => (
                         <ReactMarkdown source={document.intro} />
 
                         <h2>{document.experiencetitle}</h2>
+                        <h2>{document.experience.role}</h2>
                         <h2>{document.skillstitle}</h2>
+
+
                     </>
                 ))}
             </>

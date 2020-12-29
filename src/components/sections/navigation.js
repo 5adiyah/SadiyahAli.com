@@ -6,12 +6,14 @@ import { Link } from "gatsby"
 export default function Navigation() {
     return (
       <div className="navigation">
-          <div className="container">
-              <div className="menu-bar bg-offwhite">
+          <div className="menu-bar bg-offwhite container">
+              <div className="content-side-padding">
                   <img src={Menubtn} alt="Click to open the menu"/>
               </div>
+          </div>
 
-              <div className="menu-wrapper bg-yellow">
+          <div className="menu-wrapper bg-yellow container">
+              <div className="content-side-padding">
                   <div className="menu-close">
                       <img src={Menuclose} alt="Click to close the menu"/>
                   </div>
