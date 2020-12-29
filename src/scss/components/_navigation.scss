@@ -18,8 +18,12 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 675px;
+    height: 730px;
+    z-index: 2;
     @extend .right-left-tri;
+
+    //remove later
+    display: none;
   }
 
   .menu-wrapper .content-side-padding{
