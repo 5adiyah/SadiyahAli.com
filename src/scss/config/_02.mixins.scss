@@ -1,3 +1,8 @@
+/***
+ * @file
+ * MIXINS - See theme Readme for more details.
+ */
+
 /* MEDIA QUERIES */
 @mixin mq($query) {
   @media (min-width: rem($query)) {
@@ -5,6 +10,22 @@
   }
 }
 
+/* PX TO REM CONVERSION */
+@function rem($pixels, $context: $base-font-size) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+  @return $pixels / $context * 1rem;
+}
+
+
+// Fonts and accessible line-heights. Apply the $size (font-size) and
+// $line-height values from the designs here (in px). $baseFontSize is the
+// base font-size assigned for this project.
+// Example: @include font-line-height(15, 18);
 @mixin font-line-height($font-size: $base-font-size, $line-height: 20) {
   $font-size-px: $font-size * 1px;
   $base-font-size-px: $base-font-size * 1px;
@@ -13,6 +34,7 @@
 }
 
 
+// Combine active, hover, and focus for accessibility purposes
 @mixin hocus {
   &:active,
   &:hover,
@@ -20,3 +42,16 @@
     @content;
   }
 }
+
+
+// IE 10 and 11 Support
+@mixin support-ie {
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @content;
+  }
+
+  @supports (-ms-ime-align: auto) {
+    @content;
+  }
+}
+
