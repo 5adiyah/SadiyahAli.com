@@ -41,6 +41,7 @@ h2, .h2 {
   font-size: 36px;
   letter-spacing: 4.5px;
   text-align: center;
+  margin: 0;
 
   @include mq($md) {
     font-size: 60px;
