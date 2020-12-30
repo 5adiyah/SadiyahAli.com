@@ -2,6 +2,7 @@ const globImporter = require("node-sass-glob-importer")
 module.exports = {
   siteMetadata: {
     title: `Sadiyah Ali`,
+    siteUrl: `https://sadiyahali.com`,
     description: `My personal website and blog.`,
     author: `@5adiyah`,
   },
@@ -59,6 +60,19 @@ module.exports = {
             variants: [`400`, `500`, `600`, `700`],
           },
         ],
+      },
+    },
+    {
+      resolve: `gatsby-source-sanity`,
+      options: {
+        projectId: `r840k3te`,
+        dataset: `production`,
+        watchMode: true,
+        token: process.env.SANITY_TOKEN,
+
+        // If the Sanity GraphQL API was deployed using `--tag <name>`,
+        // use `graphqlTag` to specify the tag name. Defaults to `default`.
+        graphqlTag: 'default',
       },
     },
   ],
