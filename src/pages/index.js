@@ -32,8 +32,10 @@ const IndexPage = () => (
                 {data.allStrapiHome.nodes.map(document => (
                     <>
                         <div className="intro grid yellow-before">
+                            <div className="full-width">
                                 <h2 className="yellow-line">{document.introtitle}</h2>
                                 <ReactMarkdown source={document.intro} />
+                            </div>
                         </div>
 
                         <h2>{document.experiencetitle}</h2>

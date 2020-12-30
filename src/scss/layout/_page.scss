@@ -48,6 +48,14 @@ body {
   @include mq($lg) {
     max-width: calc(100% - (#{$grid-gutter} * 2));
   }
+
+  .full-width {
+    grid-column:  1 / -1;
+
+    @include mq($md) {
+      grid-column: 2 / -2;
+    }
+  }
 }
 
 #grid-checker {
@@ -64,8 +72,8 @@ body {
   z-index: 11;
   
   p{
-    background: $yellow;
-    opacity: 0.2;
+    background: $light-gray;
+    opacity: 0.05;
     width: 100%;
   }
 }
