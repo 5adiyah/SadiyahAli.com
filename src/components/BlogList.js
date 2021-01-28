@@ -1,7 +1,7 @@
 import React from 'react';
 
-export default function BlogList() {
+export default function BlogList( { posts } ) {
     return (
-        <p>List of Posts</p>
+        <p>List of Posts: {posts.length}</p>
     );
 }

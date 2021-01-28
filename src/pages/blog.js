@@ -7,7 +7,7 @@ export default function Blog({ data }) {
     const posts = data.blogposts.nodes;
     return (
         <Layout>
-            <BlogList />
+            <BlogList posts={posts} />
         </Layout>
     );
 }
