@@ -35,13 +35,6 @@ export const query = graphql`
                 id
                 category
             }
-            hero {
-              asset {
-                fluid(maxWidth: 720) {
-                    ...GatsbySanityImageFluid
-                }
-              }
-            }
           }
         }
     }
