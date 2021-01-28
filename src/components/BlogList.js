@@ -1,9 +1,13 @@
 import React from 'react';
-
+import { Link } from 'gatsby';
 function BlogItem({ post }) {
     return (
         <div className="blog-item">
-            <p>{post.name}</p>
+            <Link to={`/blog/${post.slug.current}`}>
+                <p className="post-date">{post.date}</p>
+                <p className="post-title">{post.name}</p>
+                <p className="post-teaser">{post.teaser}</p>
+            </Link>
         </div>
     )
 }

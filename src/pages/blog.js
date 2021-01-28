@@ -7,7 +7,15 @@ export default function Blog({ data }) {
     const posts = data.blogposts.nodes;
     return (
         <Layout>
-            <BlogList posts={posts} />
+            <div className="blog grid yellow-before">
+                <div className="full-width">
+                    <h2 className="yellow-line">The Blog</h2>
+                </div>
+
+                <div className="posts">
+                    <BlogList posts={posts} />
+                </div>
+            </div>
         </Layout>
     );
 }
@@ -19,6 +27,7 @@ export const query = graphql`
             id
             name
             date
+            teaser
             slug {
                 current
             }
