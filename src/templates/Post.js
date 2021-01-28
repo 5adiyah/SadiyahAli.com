@@ -1,14 +1,21 @@
 import React from "react";
-import {graphql} from "gatsby";
+import {graphql, Link} from "gatsby";
 import Img from "gatsby-image";
+import Layout from "../components/layout";
 export default function SinglePostPage({ data }) {
     const { post } = data;
     return (
-        <div className="post-wrapper">
-            <div className="post-img">
-                <Img fluid={post.hero.asset.fluid} alt={post.name}/>
+        <Layout>
+            <div className="post-wrapper grid yellow-before">
+                <p className="post-date">{post.date}</p>
+                <p className="post-title">{post.name}</p>
+                <div className="post-img">
+                    <Img fluid={post.hero.asset.fluid} alt={post.name}/>
+                </div>
+                <div className="horizontal-div yellow">
+                </div>
             </div>
-        </div>
+        </Layout>
     )
 }
 
@@ -21,9 +28,11 @@ export const query = graphql`
             id
             name
             date
-            category {
-                id
-                category
+            content {
+                _rawChildren
+                children
+                list
+                style
             }
             hero {
               asset {
