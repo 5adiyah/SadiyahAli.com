@@ -12,17 +12,17 @@ export default function Blog() {
 
 export const query = graphql`
     query PostQuery {
-        allSanityPost {
+        blogposts: allSanityPost {
           nodes {
             id
             name
             date
-            content {
-              _key
-              _type
-              style
-              list
-              _rawChildren
+            slug {
+                current
+            }
+            category {
+                id
+                category
             }
             hero {
               asset {
