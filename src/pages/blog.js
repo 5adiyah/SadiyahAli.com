@@ -1,14 +1,13 @@
 import React from 'react';
 import Layout from "../components/layout";
 import {graphql} from "gatsby";
+import BlogList from "../components/BlogList";
 
 export default function Blog({ data }) {
     const posts = data.blogposts.nodes;
-    console.log(data);
     return (
         <Layout>
-            <p>Hey! I'm the blog page</p>
-            <p>There are {posts.length} Posts</p>
+            <BlogList />
         </Layout>
     );
 }
