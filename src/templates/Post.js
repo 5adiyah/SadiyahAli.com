@@ -2,17 +2,20 @@ import React from "react";
 import {graphql, Link} from "gatsby";
 import Img from "gatsby-image";
 import Layout from "../components/layout";
+import BlockContent from '@sanity/block-content-to-react';
 export default function SinglePostPage({ data }) {
     const { post } = data;
+    console.clear();
     return (
         <Layout>
-            <div className="post-wrapper grid yellow-before">
+            <div className="post-wrapper  yellow-before">
                 <p className="post-date">{post.date}</p>
                 <p className="post-title">{post.name}</p>
                 <div className="post-img">
                     <Img fluid={post.hero.asset.fluid} alt={post.name}/>
                 </div>
                 <div className="horizontal-div yellow">
+                    <BlockContent blocks={post._rawContent} />
                 </div>
             </div>
         </Layout>
@@ -27,13 +30,8 @@ export const query = graphql`
         }) {
             id
             name
-            date
-            content {
-                _rawChildren
-                children
-                list
-                style
-            }
+            date(formatString: "MMM DD, Y")
+            _rawContent(resolveReferences: {maxDepth: 10})
             hero {
               asset {
                 fluid(maxWidth: 720) {

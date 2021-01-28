@@ -26,7 +26,7 @@ export const query = graphql`
           nodes {
             id
             name
-            date
+            date(formatString: "MMM DD, Y")
             teaser
             slug {
                 current
